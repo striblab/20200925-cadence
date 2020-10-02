@@ -1,0 +1,148 @@
+/**
+ * Main style file for project.
+ * Uses SASS, specifically the SCSS syntax
+ * http://sass-lang.com/
+ */
+
+
+// Include strib-icons
+$strib-fonts-location: '//static.startribune.com/assets/libs/strib-icons/0.0.10/';
+@import '@striblab/strib-icons/build/strib-icons.scss';
+
+
+// Environment noting
+@import "shared/_environment";
+
+// Strib styles
+// https://github.com/striblab/strib-styles/blob/master/source/styles/_variables.scss
+
+// Assumed that this project lives within an existing page, so we add a
+// wrapper that is very specific and wrap our other styles in it so
+// that we don't affect other styles on the page.  Note that
+// this increases the CSS size, and it means strib-styles won't use
+// rems when it would otherwise.
+$selector-wrapper: '.strib-styles.ssa.ssb.ssc';
+@import '@striblab/strib-styles/source/styles/default-wrapper.scss';
+
+// Project specific styles.  Split styles into files per component
+#{$selector-wrapper} {
+  // Split your styles into multiple files so its easier to understand and change
+  @import 'shared/_project';
+}
+
+
+.elexLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px  !important;
+  margin-top: 50px  !important;
+}
+
+.elexLogo img {
+  width: 50px;
+}
+
+.elexLogo .text {
+  font-family: "Benton Sans", sans-serif !important;
+  margin-right: 5px;
+}
+
+.elexLogo h3 {
+  font-family: "Popular", sans-serif !important;
+  margin-bottom: 0 !important;
+  margin-top: 10px !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+.adjacent {
+  display:inline-block;
+  width:48%;
+  text-align:center;
+  padding:5px;
+}
+
+.name {
+  text-align:left;
+  white-space:nowrap;
+}
+
+#calendar {
+  font-size:0.8em;
+}
+
+.row {
+  display:table-row;
+  border-spacing: 1px;
+}
+
+  
+.row div {
+  display:table-cell;
+}
+
+.type {
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.th {
+  text-align:right;
+  font-weight:900;
+}
+
+.stat {
+  text-align:right;
+}
+
+.pct {
+  text-align:center;
+  color:#ffffff;
+  font-weight:bold;
+}
+
+.block {
+  display:table-cell;
+  font-size:0.8em;
+  padding:5px;
+
+}
+
+.axisLabel {
+  text-align:center;
+  font-size:0.7em;
+}
+
+#chartPVI {
+  height:400px !important;
+}
+#chartPVI .c3-area {
+  opacity: 1 !important;
+}
+#chartPVI .c3-line {
+  opacity: 1 !important;
+  stroke-width: 2px !important;
+}
+
+.powerline {
+  stroke-dasharray: 5, 5;
+  stroke: #333;
+}
+
+.legendary, p .legendary {
+  padding:4px;
+  color: #fff;
+  font-weight:bold;
+  border-radius: 5px;
+  padding: 0 7px;
+  margin-bottom: 3px;
+}
+
+#forecasts {
+  width:320px; 
+  font-size:0.8em;
+  margin-left:auto;
+  margin-right:auto;
+}
